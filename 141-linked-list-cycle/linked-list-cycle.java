@@ -9,6 +9,7 @@
  *     }
  * }
  */
+/* in this code slow pointer take one step and fast painter take 2 step*/
 public class Solution {
     public boolean hasCycle(ListNode head) {
        ListNode slow=head;
