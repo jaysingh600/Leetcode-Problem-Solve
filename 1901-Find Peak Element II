@@ -1,0 +1,57 @@
+// class Solution {
+//     public int[] findPeakGrid(int[][] mat) {
+// brute force method
+//         int larg=Integer.MIN_VALUE;
+//         int[] index=new int[2];
+//         for(int i=0;i<mat.length;i++){
+//             for(int j=0;j<mat[0].length;j++){
+//                 if(mat[i][j]>larg){
+//                      larg=mat[i][j];
+//                      index= new int[]{i,j};
+//                 }
+//             }
+//         }
+//         return index;
+//     }
+// }
+class Solution {
+    public int[] findPeakGrid(int[][] mat) {
+        int rows = mat.length;
+        int cols = mat[0].length;
+
+        int low = 0;
+        int high = cols - 1;
+
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            // Find maximum element in mid column
+            int maxRow = 0;
+            for (int row = 0; row < rows; row++) {
+                if (mat[row][mid] > mat[maxRow][mid]) {
+                    maxRow = row;
+                }
+            }
+            int left = (mid - 1 >= 0) 
+                        ? mat[maxRow][mid - 1] 
+                        : -1;
+
+            int right = (mid + 1 < cols) 
+                         ? mat[maxRow][mid + 1] 
+                         : -1;
+
+            // Peak found
+            if (mat[maxRow][mid] > left &&
+                mat[maxRow][mid] > right) {
+
+                return new int[]{maxRow, mid};
+            }
+            // Move towards the larger neighbor
+            if (left > mat[maxRow][mid]) {
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        }
+        return new int[]{-1, -1};
+    }
+}
