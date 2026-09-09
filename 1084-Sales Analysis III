@@ -1,0 +1,9 @@
+# Write your MySQL query statement below
+select P.product_id,P.product_name
+ from Product As P
+  LEFT JOIN Sales
+   ON P.product_id = Sales.product_id
+    GROUP BY P.product_id, P.product_name 
+    Having 
+    MIN(Sales.sale_date) >= '2019-01-01'
+    AND MAX(Sales.sale_date) <= '2019-03-31';
