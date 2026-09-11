@@ -1,0 +1,24 @@
+class Solution {
+    public int findFinalValue(int[] nums, int original) {
+    // brute force
+        // int n=nums.length;
+        // Arrays.sort(nums);
+
+        // for(int i=0;i<n;i++){
+        //     if(nums[i]==original){
+        //         original=original*2;
+        //     }
+        // }
+        // return original;
+// optimized approach
+        HashSet<Integer> set=new HashSet<>();
+        for(int num : nums){
+            set.add(num);
+        }
+        while(set.contains(original)){
+            original= original*2;
+        }
+
+        return original;
+    }
+}
