@@ -1,0 +1,14 @@
+class Solution {
+    public int buyChoco(int[] prices, int money) {
+        Arrays.sort(prices);
+        int n = prices.length;
+        for (int i = 0; i < n; i++) {
+            for (int j = 1; j < n; j++) {
+             int  sum = prices[i] + prices[j];
+                if (sum <= money)
+                    return money - sum;
+            }
+        }
+        return money;
+    }
+}
