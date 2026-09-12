@@ -1,0 +1,37 @@
+class Solution {
+    public int countBeautifulPairs(int[] nums) {
+        int n = nums.length;
+        int count = 0;
+
+        for(int i = 0; i < n; i++) {
+            for(int j = i + 1; j < n; j++) {
+
+                if(gcd(firstDigit(nums[i]), lastDigit(nums[j])) == 1) {
+                    count++;
+                }
+            }
+        }
+
+        return count;
+    }
+
+    public int gcd(int a, int b) {
+        while(b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+
+    public int firstDigit(int num) {
+        while(num >= 10) {
+            num /= 10;
+        }
+        return num;
+    }
+
+    public int lastDigit(int num) {
+        return num % 10;
+    }
+}
