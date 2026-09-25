@@ -1,0 +1,30 @@
+class Solution {
+    public boolean checkValid(int[][] matrix) {
+        int n = matrix.length;
+
+        for (int i = 0; i < n; i++) {
+
+            boolean[] row = new boolean[n + 1];
+            boolean[] col = new boolean[n + 1];
+
+            for (int j = 0; j < n; j++) {
+
+                // Check row
+                int r = matrix[i][j];
+                if (row[r]) {
+                    return false;
+                }
+                row[r] = true;
+
+                // Check column
+                int c = matrix[j][i];
+                if (col[c]) {
+                    return false;
+                }
+                col[c] = true;
+            }
+        }
+
+        return true;
+    }
+}
