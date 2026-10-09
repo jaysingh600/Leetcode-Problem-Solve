@@ -1,0 +1,21 @@
+class Solution {
+    public boolean isTrionic(int[] nums) {
+        int index=0;
+        int n=nums.length;
+        while (index + 1 < n && nums[index] < nums[index + 1]) {
+            index++;
+        }
+        if (index == 0) return false;
+        int start = index;
+        while (index + 1 < n && nums[index] > nums[index + 1]) {
+            index++;
+        }
+        if (index == start) return false;
+        start = index;
+        while (index + 1 < n && nums[index] < nums[index + 1]) {
+            index++;
+        }
+        if (index == start) return false;
+        return index == n - 1;
+    }
+}
