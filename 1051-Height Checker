@@ -1,3 +1,4 @@
+// height checker
 class Solution {
     public int heightChecker(int[] heights) {
         int n=heights.length;
