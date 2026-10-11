@@ -2,7 +2,7 @@
 
 <p>Return the index of the peak element.</p>
 
-<p>Your task is to solve it in <code>O(log(n))</code> time complexity.</p>
+<p>Your task is to solve it    in <code>O(log(n))</code> time complexity.</p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
