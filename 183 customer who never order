@@ -1,3 +1,4 @@
 # Write your MySQL query statement below
+#customer who never order
 select customers.name As Customers
 from Customers Left join Orders On Customers.id=Orders.CustomerId where CustomerId is null;
