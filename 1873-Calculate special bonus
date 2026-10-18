@@ -1,3 +1,4 @@
+#calculate special bonus
 SELECT employee_id,
        CASE
            WHEN MOD(employee_id, 2) != 0
