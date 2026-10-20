@@ -1,3 +1,4 @@
+#Check good Integer
 class Solution {
     public boolean checkGoodInteger(int n) {
         int sum=0;
