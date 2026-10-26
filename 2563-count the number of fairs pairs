@@ -1,0 +1,40 @@
+class Solution {
+    public long countFairPairs(int[] nums, int lower, int upper) {
+    //   int n=nums.length;
+    //   int count=0;
+    //   for(int i=0;i<n;i++){
+
+    //     for(int j=1;j<n;j++){
+    //         if(lower <= nums[i] + nums[j] && nums[i] + nums[j] <= upper && 0 <= i && i < j && j < n){
+    //             count++;
+    //         }
+    //     }
+    //   } 
+    //   return count; 
+
+
+  // optimized approach
+        Arrays.sort(nums);
+
+        return countLess(nums, upper) - countLess(nums, lower - 1);
+    }
+
+    private long countLess(int[] nums, int target) {
+        int left = 0;
+        int right = nums.length - 1;
+        long count = 0;
+
+        while (left < right) {
+            if (nums[left] + (long) nums[right] <= target) {
+                count += right - left;
+                left++;
+            } else {
+                right--;
+            }
+        }
+
+        return count;
+    }
+}
+
+   
