@@ -6,7 +6,7 @@
  *               otherwise return 0
  * int guess(int num);
  */
-
+#Guess Number Higher or Lower
 public class Solution extends GuessGame {
     public int guessNumber(int n) {
         int low=1;
