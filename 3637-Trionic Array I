@@ -1,3 +1,4 @@
+#Trionic Array
 class Solution {
     public boolean isTrionic(int[] nums) {
         int index=0;
